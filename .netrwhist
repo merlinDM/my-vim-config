@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/mdavydov/Documents/about'
+let g:netrw_dirhist_2='/usr/local/etc/elasticsearch'
+let g:netrw_dirhist_1='/Users/mdavydov/.config/nvim'
+let g:netrw_dirhist_0='/Users/mdavydov/scalaProjects/mikmmiasdasd/src/main/scala'
+let g:netrw_dirhist_9='/Users/mdavydov/scalaProjects/mikmmiasdasd/src/main'
+let g:netrw_dirhist_8='/Users/mdavydov/mikmmiasdasd/src'
+let g:netrw_dirhist_7='/Users/mdavydov/Documents'
+let g:netrw_dirhist_6='/Users/mdavydov/Library/Mail/V6/MailData/Signatures'
+let g:netrw_dirhist_5='/Users/mdavydov/Library/Mail/V6'
+let g:netrw_dirhist_4='/Users/mdavydov/Library'
