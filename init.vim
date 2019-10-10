@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'artur-shaik/vim-javacomplete2'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Configuration for vim-scala
