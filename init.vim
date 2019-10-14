@@ -1,9 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
+    Plug 'vim-airline/vim-airline'
     Plug 'ervandew/supertab'
     Plug 'derekwyatt/vim-scala'
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    Plug 'artur-shaik/vim-javacomplete2'
+    " Plug 'artur-shaik/vim-javacomplete2'
     Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -16,9 +17,6 @@ set title
 set ignorecase
 set encoding=utf-8
 
-set norelativenumber
-nnoremap <C-i> :set relativenumber!<CR>
-
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -26,9 +24,6 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-
-" ~/.vimrc
-" Configuration for coc.nvim
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
@@ -106,42 +101,6 @@ nnoremap <M-Up> <C-W><C-K>
 nnoremap <C-Right> <C-W><C-L>
 nnoremap <C-Left> <C-W><C-H>
 
-nnoremap <M-Tab> gt
-
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
-" Enable default mapping for javacomplete2
-let g:JavaComplete_EnableDefaultMappings = 1
-
-" Default mapping for javacomplete2
-" nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
-" imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
-" nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
-" nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-" nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-" nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-" nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
-" nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
-" nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
-" nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
-" imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
-" imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
-" imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-" vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-" vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-" vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-" nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
-" nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
-
 " https://vim.fandom.com/wiki/Pasting_registers
 :inoremap <C-R>+ <C-R><C-R>+
 :inoremap <S-Tab> <C-O><lt><lt>
@@ -149,3 +108,19 @@ let g:JavaComplete_EnableDefaultMappings = 1
 :nnoremap <S-Tab> <lt><lt>
 :vnoremap <Tab> >
 :vnoremap <S-Tab> <lt>
+
+" Easier split navigations
+nnoremap <M-Down> <C-W><C-J>
+nnoremap <M-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
+" Easier tab navigations
+nnoremap <M-Tab> gt
+
+" Relative Number Switch via ctrl-i
+set norelativenumber
+nnoremap <C-l> :set relativenumber!<CR>
+
+" Quick reload for $MYVIMRC
+" nmap ,rcfg <ESC>:w<CR>:so %<CR>
