@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     " Plug 'artur-shaik/vim-javacomplete2'
+    Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -94,20 +95,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" <M-b><C-Left><C-Right><M-Up><M-Down>
-" easier split navigations
-nnoremap <M-Down> <C-W><C-J>
-nnoremap <M-Up> <C-W><C-K>
-nnoremap <C-Right> <C-W><C-L>
-nnoremap <C-Left> <C-W><C-H>
-
 " https://vim.fandom.com/wiki/Pasting_registers
 :inoremap <C-R>+ <C-R><C-R>+
-:inoremap <S-Tab> <C-O><lt><lt>
+
 :nnoremap <Tab> >>
-:nnoremap <S-Tab> <lt><lt>
-:vnoremap <Tab> >
-:vnoremap <S-Tab> <lt>
+:nnoremap <S-Tab> <<
+
+" SuperTab settings
+" Doesn't work :-(
+let g:SuperTabMappingForward = '<Tab>'
+let g:SuperTabMappingBackward = '<S-Tab>'
 
 " Easier split navigations
 nnoremap <M-Down> <C-W><C-J>
@@ -122,5 +119,5 @@ nnoremap <M-Tab> gt
 set norelativenumber
 nnoremap <C-l> :set relativenumber!<CR>
 
-" Quick reload for $MYVIMRC
-" nmap ,rcfg <ESC>:w<CR>:so %<CR>
+" NERDTreeToggle
+nnoremap <leader>t :NERDTreeToggle<CR>
